@@ -13,6 +13,7 @@ function love.load()
   love.window.setTitle("William's Game")
   love.window.setMode(1848, 936)
   background = love.graphics.newImage("images/background.png")
+  porch = love.graphics.newImage("images/porch.png")
 end
 
 function love.update(dt)
@@ -21,6 +22,7 @@ end
 
 function love.draw()
   love.graphics.draw(background, 0, 0)
+  love.graphics.draw(porch, 1300, 400)
   love.graphics.draw(sam.img.disp, sam.x, sam.y)
 end
 
