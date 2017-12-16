@@ -50,7 +50,7 @@ end
 
 function love.keypressed(key)
   if key == "`" then
-    debug = not debut
+    debug = not debug
   end
 end
 
