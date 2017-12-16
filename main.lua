@@ -50,16 +50,7 @@ end
 
 function love.keypressed(key)
   if key == "`" then
-    toggle_dev_mode()
-  end
-end
-
-function toggle_dev_mode()
-  if debug
- then
-    debug = false
-  else
-    debug = true
+    debug = not debut
   end
 end
 
