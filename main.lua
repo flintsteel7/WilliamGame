@@ -1,6 +1,6 @@
 require "characters"
 
-dev = true
+debug = false
 
 hit = {}
 
@@ -35,7 +35,8 @@ function love.draw()
   -- love.graphics.draw(porch, 1300, 400)
   love.graphics.draw(box.img.disp, box.x, box.y)
   love.graphics.draw(sam.img.disp, sam.x, sam.y)
-  if dev then
+  if debug
+ then
     love.graphics.print(round(sam.x, 2), 10, 10)
     love.graphics.print(round(sam.y, 2), 70, 10)
     love.graphics.print(string.format("hit dn: %s", tostring(hit.dn)), 130, 10)
@@ -44,6 +45,21 @@ function love.draw()
     love.graphics.print(string.format("hit rt: %s", tostring(hit.rt)), 130, 100)
     draw_hitbox_corners(sam)
     draw_hitbox_corners(box)
+  end
+end
+
+function love.keypressed(key)
+  if key == "`" then
+    toggle_dev_mode()
+  end
+end
+
+function toggle_dev_mode()
+  if debug
+ then
+    debug = false
+  else
+    debug = true
   end
 end
 
